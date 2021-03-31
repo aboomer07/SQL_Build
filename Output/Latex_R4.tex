@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+\\Number of companies by location. Give a world map chart (import in excel the data..., look for a tutorial about that).\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT Country, COUNT(CID) as NumCompanies 
+FROM COMPANY 
+GROUP BY Country
+ORDER BY NumCompanies DESC
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{lr}
+\toprule
+ Location                 &   NumCompanies \\
+\midrule
+ United States of America &              6 \\
+ Germany                  &              2 \\
+ France                   &              2 \\
+ Sweden                   &              1 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------------
+\\Form that displays for each funding program the type of actions it can fund.\\
+--------------------------------------------------------------------------------
+CREATE VIEW EligibleTypes AS
+\begin{lstlisting}[language = SQL]
+SELECT FUNDING.FID, FUNDING.NAME, ACTIONTYPE.TID, ACTIONTYPE.DESCRIPTION
+FROM FUNDING, ACTIONTYPE, ELIGIBILITY
+WHERE FUNDING.FID = ELIGIBILITY.FID AND ELIGIBILITY.TID = ACTIONTYPE.TID
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{}
+\toprule
+ FID   & Name   & TID   & Description   \\
+\midrule
+\bottomrule
+\end{tabular}

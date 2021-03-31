@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+\\Evolution of the investment of a given company per year: number of recruitments, the percentage of green investment compared to the amount of turnover. Give also a graphic representation.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.CID, COMPANY.Name, Year,
+	GreenRecruit, GreenInvest, Turnover, 
+	(GreenInvest/Turnover)*100 AS GreenInvestPercentage
+FROM COMPANY, IMPROVEMENT 
+WHERE COMPANY.CID = IMPROVEMENT.CID
+AND COMPANY.NAME = 'Alphabet'
+\end{lstlisting}
+--------------------------------------------------------------------------------\\\begin{tabular}{rlrrrrr}
+\toprule
+   CID & Name     &   Year &   GreenRecruit &   GreenInvest &   Turnover &   GreenInvestPercentage \\
+\midrule
+     1 & Alphabet &   2017 &           1200 &          4000 &     110855 &                 3.60832 \\
+     1 & Alphabet &   2018 &           8000 &          3700 &     136819 &                 2.7043  \\
+     1 & Alphabet &   2019 &           8430 &          6500 &     161857 &                 4.01589 \\
+\bottomrule
+\end{tabular}

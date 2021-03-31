@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------
+\\Companies that propose help and also provide certifications.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT DISTINCT comb.CID, COMPANY.Name
+FROM(
+	SELECT DISTINCT CID
+	FROM SUPPORTING 
+
+	UNION ALL 
+
+	SELECT DISTINCT CID
+	FROM CERTIFYING
+) comb, COMPANY
+WHERE comb.CID = COMPANY.CID
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rl}
+\toprule
+   CID & Name       \\
+\midrule
+     3 & Apple      \\
+     5 & Volkswagen \\
+     8 & Tesla      \\
+    11 & Spotify    \\
+     7 & Siemens    \\
+\bottomrule
+\end{tabular}

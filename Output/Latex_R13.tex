@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+\\Percentage of actions that were funded.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT 100 * CAST(Funded AS DECIMAL) / CAST(AllActions AS DECIMAL) as PctFunded 
+FROM(
+	SELECT 1 As Holder, COUNT(AID) As Funded 
+	FROM ACTIONFUND 
+	GROUP BY Holder
+) AS left 
+JOIN (
+	SELECT 1 As Holder, COUNT(AID) As AllActions 
+	FROM ACTION 
+	GROUP BY Holder
+) AS right 
+ON left.Holder = right.Holder
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{r}
+\toprule
+   PctFunded \\
+\midrule
+          36 \\
+\bottomrule
+\end{tabular}

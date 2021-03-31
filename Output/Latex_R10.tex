@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+\\Average, max and min amounts of grants and number of grants attributed by each Funding program.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT FUNDING.FID, 
+	AVG(ACTIONFUND.Amount) as AvgAmount, 
+	MAX(ACTIONFUND.Amount) as MaxAmount, 
+	MIN(ACTIONFUND.Amount) as MinAmount, 
+	COUNT(ACTIONFUND.AID) as NumGrants 
+FROM FUNDING, ACTIONFUND 
+WHERE FUNDING.FID = ACTIONFUND.FID 
+GROUP BY FUNDING.FID
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rrrrr}
+\toprule
+   FID &   AvgAmount &   MaxAmount &   MinAmount &   NumGrants \\
+\midrule
+     1 &       23000 &       34000 &       12000 &           2 \\
+     2 &       10000 &       10000 &       10000 &           1 \\
+     3 &        8000 &        8000 &        8000 &           1 \\
+     4 &        5000 &        5000 &        5000 &           1 \\
+     5 &       36500 &       40000 &       33000 &           2 \\
+\bottomrule
+\end{tabular}

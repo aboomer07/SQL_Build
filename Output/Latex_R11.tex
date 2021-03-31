@@ -1,0 +1,21 @@
+--------------------------------------------------------------------------------
+\\Types of actions without funding program.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT ACTIONTYPE.TID, ACTIONTYPE.DESCRIPTION
+FROM ACTIONTYPE 
+WHERE ACTIONTYPE.TID NOT IN(
+SELECT ACTION.TID FROM
+ACTION, ACTIONFUND
+WHERE ACTION.AID = ACTIONFUND.AID)
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rl}
+\toprule
+   TID & Description                                          \\
+\midrule
+     3 & Usage of green bonds                                 \\
+     6 & Management remuneration based on CO2 emission levels \\
+     8 & Supporting biodiversity                              \\
+\bottomrule
+\end{tabular}

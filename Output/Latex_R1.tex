@@ -1,0 +1,27 @@
+--------------------------------------------------------------------------------
+\\Information about the evolution through time of companies of a given sector.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT IMPROVEMENT.*, COMPANY.NAME
+FROM COMPANY, IMPROVEMENT 
+WHERE COMPANY.CID = IMPROVEMENT.CID
+AND COMPANY.SECTOR = 'Technology'
+\end{lstlisting}
+--------------------------------------------------------------------------------\\\begin{tabular}{rrrrrrrl}
+\toprule
+   IID &       Emissions &   Turnover &   GreenInvest &   GreenRecruit &   CID &   Year & Name     \\
+\midrule
+     1 &     3.29491e+06 &     110855 &          4000 &           1200 &     1 &   2017 & Alphabet \\
+     2 &     1.50272e+07 &     136819 &          3700 &           8000 &     1 &   2018 & Alphabet \\
+     3 &     8.57655e+06 &     161857 &          6500 &           8430 &     1 &   2019 & Alphabet \\
+     7 &     2.71e+07    &     247510 &           423 &          12000 &     3 &   2017 & Apple    \\
+     8 &     2.46e+07    &     260170 &           530 &          14230 &     3 &   2018 & Apple    \\
+     9 &     2.41e+07    &     265600 &           588 &          17400 &     3 &   2019 & Apple    \\
+    28 & 50000           &        825 &             5 &              0 &    10 &   2017 & Snapchat \\
+    29 & 43000           &       1180 &             7 &             20 &    10 &   2018 & Snapchat \\
+    30 & 38000           &       1716 &            10 &             70 &    10 &   2019 & Snapchat \\
+    31 & 15000           &       1200 &           125 &              5 &    11 &   2017 & Spotify  \\
+    32 & 18000           &       4320 &           120 &             12 &    11 &   2018 & Spotify  \\
+    33 & 19400           &       6760 &           194 &             25 &    11 &   2019 & Spotify  \\
+\bottomrule
+\end{tabular}

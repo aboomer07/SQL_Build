@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------------
+\\For each type of actions display the companies that can help for its realization.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT ACTIONTYPE.TID, ACTIONTYPE.DESCRIPTION,
+	COMPANY.CID, COMPANY.NAME 
+FROM ACTIONTYPE, CERTIFYING, COMPANY 
+WHERE COMPANY.CID = CERTIFYING.CID 
+AND ACTIONTYPE.TID = CERTIFYING.TID
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rlrl}
+\toprule
+   TID & Description                                  &   CID & NAME       \\
+\midrule
+     1 & Usage of renewable energy                    &     7 & Siemens    \\
+     4 & Set up of charging stations of electric cars &     8 & Tesla      \\
+     5 & Reusage of old components                    &     5 & Volkswagen \\
+     7 & Offsetting of travel emissions               &    11 & Spotify    \\
+     1 & Usage of renewable energy                    &     8 & Tesla      \\
+     1 & Usage of renewable energy                    &     5 & Volkswagen \\
+\bottomrule
+\end{tabular}

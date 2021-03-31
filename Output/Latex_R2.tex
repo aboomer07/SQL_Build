@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+\\Number of granted (funded) actions and the total amount of grants received by sector. Limit to sectors having received more than X grants and sort according to the amount. Give also a graphic representation of the answer.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.SECTOR,
+	COUNT(ACTIONFUND.FID) As GrantedActions, 
+	SUM(ACTIONFUND.Amount) as TotalAmount 
+FROM COMPANY, ACTION, ACTIONFUND 
+WHERE COMPANY.CID = ACTION.CID 
+AND ACTION.AID = ACTIONFUND.AID 
+GROUP BY COMPANY.SECTOR 
+HAVING GrantedActions > 0 
+ORDER BY TotalAmount DESC
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{lrr}
+\toprule
+ Sector          &   GrantedActions &   TotalAmount \\
+\midrule
+ Technology      &                3 &         79000 \\
+ CarManufacturer &                1 &         33000 \\
+ Food\&Bev        &                2 &         18000 \\
+ Retail          &                1 &         12000 \\
+\bottomrule
+\end{tabular}

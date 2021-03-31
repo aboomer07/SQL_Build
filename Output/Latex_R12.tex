@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------
+\\Evolution by year of the total amount received by granted actions. Draw also a graphic.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT AwardYear, SUM(Amount) as YearlyAmt 
+FROM ACTIONFUND 
+GROUP BY AwardYear
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rr}
+\toprule
+   AwardYear &   YearlyAmt \\
+\midrule
+        2017 &       33000 \\
+        2018 &       40000 \\
+        2019 &       51000 \\
+        2020 &       18000 \\
+\bottomrule
+\end{tabular}

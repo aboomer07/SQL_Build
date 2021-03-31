@@ -1,0 +1,22 @@
+--------------------------------------------------------------------------------
+\\The company that got the most number of certified actions.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.CID, COMPANY.Name, 
+COUNT(LABELLING.AID) as NumCerts 
+FROM COMPANY, LABELLING, ACTION
+WHERE COMPANY.CID = ACTION.CID AND
+LABELLING.AID = ACTION.AID 
+GROUP BY COMPANY.CID, COMPANY.Name
+ORDER BY NumCerts DESC LIMIT 3
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rlr}
+\toprule
+   CID & Name    &   NumCerts \\
+\midrule
+     6 & Walmart &          2 \\
+     4 & Airbus  &          1 \\
+     8 & Tesla   &          1 \\
+\bottomrule
+\end{tabular}

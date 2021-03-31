@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+\\Taking all the necessary assumptions and using the tools of your choice (R, Python...) combined with SQL, try to forecast how the number of actions will evolve in the future\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT ACTION.YEAR, AVG(COMPANY.SIZE) as Size,
+    SUM(ACTION.LIKES) as NumLikes,
+    COUNT(ACTION.AID) as NumActions
+FROM COMPANY, ACTION
+WHERE COMPANY.CID = ACTION.CID
+GROUP BY ACTION.YEAR
+
+NumActions(t) = A*Size(t-1) + B*NumLikes(t-1) + C*NumActions(t-1)
+        
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rrr}
+\toprule
+    &   Year &   Prediction \\
+\midrule
+  0 &   2018 &            3 \\
+  1 &   2019 &            8 \\
+  2 &   2020 &            8 \\
+  0 &   2021 &           13 \\
+\bottomrule
+\end{tabular}

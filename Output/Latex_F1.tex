@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------------
+\\Create a form/view that displays companies of a given sector and their actions\\
+--------------------------------------------------------------------------------
+CREATE VIEW ActionsInTechnology AS 
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.CID, COMPANY.NAME, ACTION.AID
+FROM COMPANY, ACTION
+WHERE COMPANY.CID = ACTION.CID
+AND COMPANY.SECTOR = 'Technology'
+\end{lstlisting}
+--------------------------------------------------------------------------------\\\begin{tabular}{}
+\toprule
+ CID   & Name   & AID   \\
+\midrule
+\bottomrule
+\end{tabular}

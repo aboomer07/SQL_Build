@@ -1,0 +1,190 @@
+--------------------------------------------------
+Filled Table Action
+--------------------------------------------------
+INSERT INTO 
+Action ('AID', 'Likes', 'Year', 'CID', 'TID')
+VALUES ('1', '320000', '2019', '3', '1'),
+	('2', '400000', '2020', '2', '2'),
+	('3', '250000', '2019', '2', '1'),
+	('4', '120000', '2020', '1', '3'),
+	('5', '75000', '2019', '6', '4'),
+	('6', '890000', '2019', '8', '4'),
+	('7', '98000', '2018', '5', '5'),
+	('8', '700000', '2019', '3', '5'),
+	('9', '210000', '2019', '3', '3'),
+	('10', '11300', '2020', '7', '6'),
+	('11', '740000', '2020', '8', '5'),
+	('12', '1430000', '2020', '10', '7'),
+	('13', '640000', '2019', '11', '7'),
+	('14', '12000', '2020', '9', '8'),
+	('15', '32000', '2020', '4', '5'),
+	('16', '135000', '2018', '8', '8'),
+	('17', '430000', '2018', '11', '6'),
+	('18', '112000', '2019', '8', '1'),
+	('19', '87000', '2020', '6', '7')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table ActionType
+--------------------------------------------------
+INSERT INTO 
+ActionType ('TID', 'Category', 'Description', 'MainImpact')
+VALUES ('1', 'Service', 'Usage of renewable energy', 'Emission reduction'),
+	('2', 'Service', 'Phasing out of plastic straws', 'Pollution prevention'),
+	('3', 'Financing', 'Usage of green bonds', 'Financial support of green initiatives'),
+	('4', 'Service', 'Set up of charging stations of electric cars', 'Emission reduction'),
+	('5', 'Production', 'Reusage of old components', 'Pollution prevention'),
+	('6', 'Internal Behavior', 'Management remuneration based on CO2 emission levels', 'Emission reduction'),
+	('7', 'Internal Behavior', 'Offsetting of travel emissions', 'Emission reduction'),
+	('8', 'External Behavior', 'Supporting biodiversity', 'Perseverance of biodiversity')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Applying
+--------------------------------------------------
+INSERT INTO 
+Applying ('AID', 'FID')
+VALUES ('3', '1'),
+	('12', '4'),
+	('13', '4'),
+	('1', '1'),
+	('2', '3'),
+	('2', '2'),
+	('7', '5'),
+	('8', '5')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Certifying
+--------------------------------------------------
+INSERT INTO 
+Certifying ('CID', 'TID')
+VALUES ('7', '1'),
+	('8', '4'),
+	('5', '5'),
+	('11', '7'),
+	('8', '1'),
+	('5', '1')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Company
+--------------------------------------------------
+INSERT INTO 
+Company ('CID', 'Name', 'City', 'Country', 'Website', 'Sector', 'Size')
+VALUES ('1', 'Alphabet', 'Mountain View', 'United States of America', 'https://abc.xyz/', 'Technology', '1188.72'),
+	('2', 'Starbucks', 'Seattle', 'United States of America', 'https://www.starbucks.com/', 'FoodAndBev', '115.05'),
+	('3', 'Apple', 'Mountain View', 'United States of America', 'https://www.apple.com/', 'Technology', '2024.06'),
+	('4', 'Airbus', 'Toulouse', 'France', 'https://www.airbus.com/', 'Aerospace', '68.22'),
+	('5', 'Volkswagen', 'Wolfsburg', 'Germany', 'https://www.volkswagenag.com/de/group.html', 'CarManufacturer', '76.17'),
+	('6', 'Walmart', 'Bentonville', 'United States of America', 'https://www.walmart.com/', 'Retail', '432.97'),
+	('7', 'Siemens', 'Berlin', 'Germany', 'https://new.siemens.com', 'Infrastructure', '95.57'),
+	('8', 'Tesla', 'Palo Alto', 'United States of America', 'https://www.tesla.com', 'CarManufacturer', '538.03'),
+	('9', 'Total SE', 'Paris', 'France', 'https://www.total.com/', 'Oil', '95.66'),
+	('10', 'Snapchat', 'Los Angeles', 'United States of America', 'https://www.snapchat.com/l', 'Technology', '66.18'),
+	('11', 'Spotify', 'Stockholm', 'Sweden', 'https://www.spotify.com/', 'Technology', '54.5')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Eligibility
+--------------------------------------------------
+INSERT INTO 
+Eligibility ('FID', 'TID')
+VALUES ('1', '1'),
+	('2', '2'),
+	('3', '2'),
+	('4', '7'),
+	('5', '5'),
+	('1', '4')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Funding
+--------------------------------------------------
+INSERT INTO 
+Funding ('FID', 'Name', 'Procedure', 'Cumulative', 'MaxAmount')
+VALUES ('1', 'Clean Energy for All', 'Please upload a clear overview of your projects energy sources to our web interface.', 'TRUE', '50000'),
+	('2', 'Clean Ocean Initiative', 'Outline your ocean waste reduction strategy on a maximum of 5 pages and send it via Email.', 'TRUE', '45000'),
+	('3', 'Waste Reduction Program', 'Personal phone interview, please schedule a time on our website.', 'TRUE', '10000'),
+	('4', 'Fly Green', 'Fill the questionnaire provided on the website', 'FALSE', '8000'),
+	('5', 'Recycling Rocks!', 'Put together a 10 page document illustrating both your current recycling efforts and your anticipated improvements. ', 'TRUE', '74000')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Improvement
+--------------------------------------------------
+INSERT INTO 
+Improvement ('IID', 'Emissions', 'Turnover', 'GreenInvest', 'GreenRecruit', 'CID', 'Year')
+VALUES ('1', '3294907', '110855', '4000', '1200', '1', '2017'),
+	('2', '15027224', '136819', '3700', '8000', '1', '2018'),
+	('3', '8576554', '161857', '6500', '8430', '1', '2019'),
+	('4', '16581000', '22380', '50', '2100', '2', '2017'),
+	('5', '16642000', '24720', '55', '2200', '2', '2018'),
+	('6', '16317000', '26500', '70', '5800', '2', '2019'),
+	('7', '27100000', '247510', '423', '12000', '3', '2017'),
+	('8', '24600000', '260170', '530', '14230', '3', '2018'),
+	('9', '24100000', '265600', '588', '17400', '3', '2019'),
+	('10', '22200000', '68400', '12', '540', '4', '2017'),
+	('11', '22510000', '68000', '11', '320', '4', '2018'),
+	('12', '21830000', '70500', '14', '830', '4', '2019'),
+	('13', '34320000', '229500', '132', '3120', '5', '2017'),
+	('14', '34480000', '235820', '140', '3800', '5', '2018'),
+	('15', '32880000', '252630', '135', '3560', '5', '2019'),
+	('16', '19254000', '500340', '80', '240', '6', '2017'),
+	('17', '18100000', '514410', '132', '230', '6', '2018'),
+	('18', '17980000', '532960', '141', '310', '6', '2019'),
+	('19', '24135000', '57320', '75', '6000', '7', '2017'),
+	('20', '22134000', '58483', '78', '7200', '7', '2018'),
+	('21', '21974000', '57139', '93', '7850', '7', '2019'),
+	('22', '282000', '11758', '0', '15000', '8', '2017'),
+	('23', '312000', '21461', '2', '13200', '8', '2018'),
+	('24', '360000', '24575', '2', '16700', '8', '2019'),
+	('25', '42000000', '200320', '40', '40', '9', '2017'),
+	('26', '39500000', '205400', '83', '120', '9', '2018'),
+	('27', '37600000', '211000', '95', '100', '9', '2019'),
+	('28', '50000', '825', '5', '0', '10', '2017'),
+	('29', '43000', '1180', '7', '20', '10', '2018'),
+	('30', '38000', '1716', '10', '70', '10', '2019'),
+	('31', '15000', '1200', '125', '5', '11', '2017'),
+	('32', '18000', '4320', '120', '12', '11', '2018'),
+	('33', '19400', '6760', '194', '25', '11', '2019')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Labelling
+--------------------------------------------------
+INSERT INTO 
+Labelling ('CID', 'AID')
+VALUES ('8', '5'),
+	('11', '12'),
+	('5', '15'),
+	('5', '18'),
+	('11', '19')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table Supporting
+--------------------------------------------------
+INSERT INTO 
+Supporting ('CID', 'TID')
+VALUES ('3', '1'),
+	('8', '4'),
+	('5', '5'),
+	('11', '7'),
+	('8', '1')
+--------------------------------------------------
+
+--------------------------------------------------
+Filled Table ActionFund
+--------------------------------------------------
+INSERT INTO 
+ActionFund ('AID', 'FID', 'AwardYear', 'Amount')
+VALUES ('1', '1', '2019', '34000'),
+	('2', '3', '2020', '8000'),
+	('2', '2', '2020', '10000'),
+	('12', '4', '2019', '5000'),
+	('7', '5', '2017', '33000'),
+	('8', '5', '2018', '40000'),
+	('5', '1', '2019', '12000')
+--------------------------------------------------
+

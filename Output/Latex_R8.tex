@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------
+\\Companies whose green situation has been improved between two given years: the quantity of carbon emissions decreases.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.CID, COMPANY.Name, 
+	sum(Emissions) filter(where Year = 2018) - sum(Emissions) filter(where Year = 2017) Diff20182017,
+	sum(Emissions) filter(where Year = 2019) - sum(Emissions) filter(where Year = 2018) Diff20192018 
+FROM COMPANY, IMPROVEMENT 
+WHERE COMPANY.CID = IMPROVEMENT.CID 
+GROUP BY COMPANY.CID 
+HAVING Diff20182017 < 0 OR Diff20192018 < 0
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rlrr}
+\toprule
+   CID & Name       &   Diff\_2018\_2017 &    Diff\_2019\_2018 \\
+\midrule
+     1 & Alphabet   &      1.17323e+07 &      -6.45067e+06 \\
+     2 & Starbucks  &  61000           & -325000           \\
+     3 & Apple      &     -2.5e+06     & -500000           \\
+     4 & Airbus     & 310000           & -680000           \\
+     5 & Volkswagen & 160000           &      -1.6e+06     \\
+     6 & Walmart    &     -1.154e+06   & -120000           \\
+     7 & Siemens    &     -2.001e+06   & -160000           \\
+     9 & Total SE   &     -2.5e+06     &      -1.9e+06     \\
+    10 & Snapchat   &  -7000           &   -5000           \\
+\bottomrule
+\end{tabular}

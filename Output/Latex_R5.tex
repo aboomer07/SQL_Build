@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+\\Companies in the decreasing order of the total number of likes they got through their actions.\\
+--------------------------------------------------------------------------------
+\begin{lstlisting}[language = SQL]
+SELECT COMPANY.CID, COMPANY.Name, 
+	SUM(ACTION.Likes) AS NumLikes 
+FROM ACTION, COMPANY 
+WHERE ACTION.CID = COMPANY.CID 
+GROUP BY COMPANY.Name 
+ORDER BY NumLikes DESC
+\end{lstlisting}
+--------------------------------------------------------------------------------
+\\\begin{tabular}{rlr}
+\toprule
+   CID & Name       &   NumLikes \\
+\midrule
+     8 & Tesla      &    1877000 \\
+    10 & Snapchat   &    1430000 \\
+     3 & Apple      &    1230000 \\
+    11 & Spotify    &    1070000 \\
+     2 & Starbucks  &     650000 \\
+     6 & Walmart    &     162000 \\
+     1 & Alphabet   &     120000 \\
+     5 & Volkswagen &      98000 \\
+     4 & Airbus     &      32000 \\
+     9 & Total SE   &      12000 \\
+     7 & Siemens    &      11300 \\
+\bottomrule
+\end{tabular}
